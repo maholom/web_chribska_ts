@@ -25,4 +25,12 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     </div>
   );
 };
+
 export default LanguageSwitcher;
+
+// const Button = ({ children }) => {
+//   <div style={{ fontSize: '20px' }}>{children}</div>;
+// };
+// <Button>
+//   <span>ahoj</span>
+// </Button>;

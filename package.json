@@ -68,6 +68,7 @@
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
     "cypress": "^9.5.1",
+    "storybook-react-intl": "^1.0.5",
     "webpack": "^5.70.0"
   }
 }
