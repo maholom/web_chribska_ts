@@ -2,7 +2,7 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 
 interface LanguageSwitcherProps {
-  onChangeLanguage?: (lang: string) => void;
+  onChangeLanguage?: (locale: string) => void;
 }
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
@@ -19,8 +19,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           }
         }}
       >
-        <option value="en">English</option>
-        <option value="el">Greek</option>
+        <option value="cs">Česky</option>
+        <option value="de">Deutsch</option>
       </select>
     </div>
   );

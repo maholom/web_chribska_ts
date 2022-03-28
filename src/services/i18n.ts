@@ -1,5 +1,5 @@
-import intlMessagesEL from '../locales/el.json';
-import intlMessagesEN from '../locales/en.json';
+import intlMessagesCS from '../locales/cs.json';
+import intlMessagesDE from '../locales/de.json';
 
 type i18nConfig = {
   defaultLocale: string;
@@ -7,8 +7,8 @@ type i18nConfig = {
 };
 
 const messagesMap: Record<string, any> = {
-  el: intlMessagesEL,
-  en: intlMessagesEN,
+  cs: intlMessagesCS,
+  de: intlMessagesDE,
 };
 
 class LocaleService {
@@ -36,6 +36,6 @@ class LocaleService {
 }
 
 export default new LocaleService({
-  defaultLocale: 'el',
-  availableLocales: ['el', 'en'],
+  defaultLocale: 'cs',
+  availableLocales: ['cs', 'de'],
 });
