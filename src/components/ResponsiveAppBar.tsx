@@ -10,8 +10,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import LanguageSwitcher from '../LanguageSwitcher';
-
-const pages = ['O nás', 'Ubytování', 'Kontakt'];
+import { pageRoutes } from '../App';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useIntl } from 'react-intl';
 
 interface ResponsiveAppBarProps {
   onChangeLanguage?: (locale: string) => void;
@@ -20,14 +21,21 @@ interface ResponsiveAppBarProps {
 export const ResponsiveAppBar: React.FC<ResponsiveAppBarProps> = ({
   onChangeLanguage,
 }) => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const intl = useIntl();
+
   const [anchorElNav, setAnchorElNav] =
     React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (route?: string) => () => {
     setAnchorElNav(null);
+    if (route) {
+      navigate(route);
+    }
   };
 
   return (
@@ -67,14 +75,23 @@ export const ResponsiveAppBar: React.FC<ResponsiveAppBarProps> = ({
                 horizontal: 'left',
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              onClose={handleCloseNavMenu()}
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pageRoutes.map(({ id, route }) => (
+                <MenuItem
+                  selected={route === pathname}
+                  key={id}
+                  onClick={handleCloseNavMenu(route)}
+                >
+                  <Typography textAlign="center">
+                    {intl.formatMessage({
+                      id: `menu-${id}`,
+                      defaultMessage: id,
+                    })}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -88,13 +105,17 @@ export const ResponsiveAppBar: React.FC<ResponsiveAppBarProps> = ({
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pageRoutes.map(({ id, route }) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                color={route === pathname ? 'secondary' : 'primary'}
+                key={id}
+                onClick={handleCloseNavMenu(route)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {intl.formatMessage({
+                  id: `menu-${id}`,
+                  defaultMessage: id,
+                })}
               </Button>
             ))}
           </Box>
