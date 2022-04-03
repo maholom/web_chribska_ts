@@ -1,10 +1,17 @@
 {
   "app_name": "xxx",
-
   "app_name2": "hhh",
-  "menu-home": "Vítejte",
-  "menu-about": "O nás",
+  "menu-home": "Vítejte!",
+  "menu-about": "Dobrodružství čekají",
   "menu-accommodation": "Nocleh",
-  "menu-contact": "Jak k nám",
-  "footer-nadpis-adresa": "Kudy k nám"
+  "menu-contact": "Pojďte dál",
+  "footer-adress": "Adresa",
+  "footer-adress-detail1": "Horní Chřibská 15",
+  "footer-adress-detail2": "407 44 Chřibská",
+  "footer-adress-mail": "vitejte@jagdhaus.cz",
+  "footer-adress-phone": "Tel. +420 737456188",
+  "footer-train": "Vlakem k nám",
+  "footer-train-description": "Vlakem se můžete vydat z Prahy s přestupem v Děčíně, dále potom autobusem číslo do zastávky Chřibská náměstí.",
+  "footer-car": "Autem k nám",
+  "footer-car-description": "Z Prahy trvá cesta zhruba 2 hodiny. Vyrazit se dá přes Mladou Boleslav, nebo Roudnici nad Labem. Z Liberce jste u nás za 50 minut, z Děčína za 30 minut."
 }

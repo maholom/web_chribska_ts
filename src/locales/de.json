@@ -1,7 +1,16 @@
 {
   "app_name": "yyy",
-  "menu-home": "Willkommen",
-  "menu-about": "Über uns",
-  "menu-accommodation": "Unterkunft",
-  "menu-contact": "Zu uns"
+  "menu-home": "Willkommen!",
+  "menu-about": "Große Abenteuer",
+  "menu-accommodation": "Kommt rein!",
+  "menu-contact": "Gleich buchen",
+  "footer-adress": "Adresse",
+  "footer-adress-detail1": "Horní Chřibská 15",
+  "footer-adress-detail2": "407 44 Chřibská",
+  "footer-adress-mail": "willkommen@jagdhaus.cz",
+  "footer-adress-phone": "Tel. +49 30/20169105",
+  "footer-train": "Per Bahn zu uns",
+  "footer-train-description": "Mit dem EuroCity Berlin-Prag bis Decin. Von dort per Bus weiter (Bus 402 bis Chribska namesti, ca. 45 Minuten)",
+  "footer-car": "Per Auto zu uns",
+  "footer-car-description": "In Pirna von der Autobahn und dann über die Panoramastrecke Königstein – Bad Schandau – Jetrichovice bis zu uns (ab Pirna: ca. 1 Stunde)."
 }
