@@ -9,11 +9,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import LanguageSwitcher from '../LanguageSwitcher';
 import { pageRoutes } from '../App';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
-import LanguageSwitcherNeu from '../LanguageSwitcherNeu';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 interface ResponsiveAppBarProps {
   onChangeLanguage: (locale: string) => void;
@@ -121,7 +120,7 @@ export const ResponsiveAppBar: React.FC<ResponsiveAppBarProps> = ({
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <LanguageSwitcherNeu onChangeLanguage={onChangeLanguage} />
+            <LanguageSwitcher onChangeLanguage={onChangeLanguage} />
           </Box>
         </Toolbar>
       </Container>

@@ -16,7 +16,7 @@ export const pageRoutes: Array<any> = [
   { id: 'home', component: Home, route: '/' },
   { id: 'about', component: About, route: '/about' },
   { id: 'accommodation', component: Accommodation, route: '/accommodation' },
-  { id: 'contacts', component: Contact, route: '/contacts' },
+  { id: 'contact', component: Contact, route: '/contact' },
 ];
 
 function App() {

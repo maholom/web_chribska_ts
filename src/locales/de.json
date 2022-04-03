@@ -1,1 +1,7 @@
-{ "app_name": "yyy" }
+{
+  "app_name": "yyy",
+  "menu-home": "Willkommen",
+  "menu-about": "Über uns",
+  "menu-accommodation": "Unterkunft",
+  "menu-contact": "Zu uns"
+}

@@ -1,36 +1,38 @@
+import Box from '@mui/material/Box';
+import Fab from '@mui/material/Fab';
 import React from 'react';
-import { useIntl } from 'react-intl';
 
 interface LanguageSwitcherProps {
-  onChangeLanguage?: (locale: string) => void;
+  onChangeLanguage: (locale: string) => void;
 }
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   onChangeLanguage,
 }) => {
-  const intl = useIntl();
   return (
-    <div className="select">
-      <select
-        value={intl.locale}
-        onChange={(e) => {
-          if (onChangeLanguage) {
-            onChangeLanguage(e.target.value);
-          }
-        }}
-      >
-        <option value="cs">Česky</option>
-        <option value="de">Deutsch</option>
-      </select>
-    </div>
+    <>
+      <Box sx={{ '& > :not(style)': { m: 1 } }}>
+        <Fab
+          onClick={() => onChangeLanguage('cs')}
+          value="cs"
+          color="primary"
+          aria-label="cesky"
+          size="small"
+        >
+          <div>CZ</div>
+        </Fab>
+        <Fab
+          onClick={() => onChangeLanguage('de')}
+          value="de"
+          color="primary"
+          aria-label="deutch"
+          size="small"
+        >
+          <div>DE</div>
+        </Fab>
+      </Box>
+    </>
   );
 };
 
 export default LanguageSwitcher;
-
-// const Button = ({ children }) => {
-//   <div style={{ fontSize: '20px' }}>{children}</div>;
-// };
-// <Button>
-//   <span>ahoj</span>
-// </Button>;

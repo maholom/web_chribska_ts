@@ -2,5 +2,8 @@
   "app_name": "xxx",
 
   "app_name2": "hhh",
-  "menu-home": "Úvod"
+  "menu-home": "Vítejte",
+  "menu-about": "O nás",
+  "menu-accommodation": "Nocleh",
+  "menu-contact": "Jak k nám"
 }
