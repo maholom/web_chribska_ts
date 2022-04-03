@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import { IntlProvider, useIntl } from 'react-intl';
+import { Routes, Route } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
 import { ThemeProvider } from '@emotion/react';
 import i18n from './services/i18n';
 import { theme } from './theme';
-import ResponsiveAppBar from './components/ResponsiveAppBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Accommodation from './pages/Accommodation';
 import Contact from './pages/Contact';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const Missing = () => <h1>Missing</h1>;
 
@@ -34,16 +35,14 @@ function App() {
         defaultLocale="cs"
       >
         <div className="App">
-          <ResponsiveAppBar
-            onChangeLanguage={onChangeLanguage}
-          ></ResponsiveAppBar>
+          <Header onChangeLanguage={onChangeLanguage}></Header>
           <Routes>
             {pageRoutes.map(({ id, route, component: Component }) => (
               <Route path={route} element={<Component />} key={id} />
             ))}
             <Route path="*" element={<Missing />} />
           </Routes>
-          {/* <Footer></Footer> */}
+          <Footer></Footer>
         </div>
       </IntlProvider>
     </ThemeProvider>

@@ -14,13 +14,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import LanguageSwitcher from '../LanguageSwitcher';
 
-interface ResponsiveAppBarProps {
+interface HeaderProps {
   onChangeLanguage: (locale: string) => void;
 }
 
-export const ResponsiveAppBar: React.FC<ResponsiveAppBarProps> = ({
-  onChangeLanguage,
-}) => {
+export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const intl = useIntl();
@@ -127,4 +125,4 @@ export const ResponsiveAppBar: React.FC<ResponsiveAppBarProps> = ({
     </AppBar>
   );
 };
-export default ResponsiveAppBar;
+export default Header;
