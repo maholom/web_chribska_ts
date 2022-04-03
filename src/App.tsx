@@ -6,17 +6,17 @@ import i18n from './services/i18n';
 import { theme } from './theme';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 import Home from './pages/Home';
+import About from './pages/About';
+import Accommodation from './pages/Accommodation';
+import Contact from './pages/Contact';
 
-const About = () => <h1>About</h1>;
-const Accommodation = () => <h1>Accommodation</h1>;
-const Contacts = () => <h1>Contacts</h1>;
 const Missing = () => <h1>Missing</h1>;
 
 export const pageRoutes: Array<any> = [
   { id: 'home', component: Home, route: '/' },
   { id: 'about', component: About, route: '/about' },
   { id: 'accommodation', component: Accommodation, route: '/accommodation' },
-  { id: 'contacts', component: Contacts, route: '/contacts' },
+  { id: 'contacts', component: Contact, route: '/contacts' },
 ];
 
 function App() {

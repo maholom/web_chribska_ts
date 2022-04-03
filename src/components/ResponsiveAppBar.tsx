@@ -13,9 +13,10 @@ import LanguageSwitcher from '../LanguageSwitcher';
 import { pageRoutes } from '../App';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
+import LanguageSwitcherNeu from '../LanguageSwitcherNeu';
 
 interface ResponsiveAppBarProps {
-  onChangeLanguage?: (locale: string) => void;
+  onChangeLanguage: (locale: string) => void;
 }
 
 export const ResponsiveAppBar: React.FC<ResponsiveAppBarProps> = ({
@@ -120,7 +121,7 @@ export const ResponsiveAppBar: React.FC<ResponsiveAppBarProps> = ({
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <LanguageSwitcher onChangeLanguage={onChangeLanguage} />
+            <LanguageSwitcherNeu onChangeLanguage={onChangeLanguage} />
           </Box>
         </Toolbar>
       </Container>
