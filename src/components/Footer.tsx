@@ -1,8 +1,9 @@
+import React from 'react';
 import { alpha, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import React from 'react';
+
 import { useIntl } from 'react-intl';
 import { theme } from '../theme';
 
@@ -68,7 +69,7 @@ const Footer = () => {
                   </strong>
                 </Box>
               </Typography>
-              <Typography>
+              <Typography paragraph={true}>
                 <Box>
                   {intl.formatMessage({
                     id: 'footer-train-description',
@@ -86,7 +87,7 @@ const Footer = () => {
                   </strong>
                 </Box>
               </Typography>
-              <Typography>
+              <Typography paragraph={true}>
                 <Box>
                   {intl.formatMessage({
                     id: 'footer-car-description',

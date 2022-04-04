@@ -11,13 +11,14 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 }) => {
   return (
     <>
-      <Box sx={{ '& > :not(style)': { m: 1 } }}>
+      <Box>
         <Fab
           onClick={() => onChangeLanguage('cs')}
           value="cs"
           color="primary"
           aria-label="cesky"
           size="small"
+          style={{ margin: '0px' }}
         >
           <div>CZ</div>
         </Fab>

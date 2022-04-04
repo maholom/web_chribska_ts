@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { styled, experimental_sx as sx } from '@mui/system';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,6 +15,7 @@ import { pageRoutes } from '../App';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import LanguageSwitcher from '../LanguageSwitcher';
+import Jagdhaus_Logo_WHITE from '../pages/logo/Jagdhaus_Logo_WHITE.svg';
 
 interface HeaderProps {
   onChangeLanguage: (locale: string) => void;
@@ -40,18 +43,10 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            LOGO
-          </Typography>
-
+          <Logo src={Jagdhaus_Logo_WHITE} alt="logo white" />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
-              size="large"
+              size="medium"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
@@ -94,14 +89,9 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
-          </Typography>
+
+          <LogoSmall src={Jagdhaus_Logo_WHITE} alt="logo white" />
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pageRoutes.map(({ id, route }) => (
               <Button
@@ -126,3 +116,24 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
   );
 };
 export default Header;
+
+export const Logo = styled('img')(
+  sx({
+    flexGrow: 1,
+    maxHeight: '25px',
+    objectFit: 'fill',
+    margin: 0,
+    mr: 2,
+    display: { xs: 'none', md: 'flex' },
+  }),
+);
+
+export const LogoSmall = styled('img')(
+  sx({
+    flexGrow: 1,
+    margin: 0,
+    maxHeight: '25px',
+    objectFit: 'fill',
+    display: { xs: 'flex', md: 'none' },
+  }),
+);
