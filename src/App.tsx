@@ -38,11 +38,16 @@ function App() {
           <Header onChangeLanguage={onChangeLanguage}></Header>
           <Routes>
             {pageRoutes.map(({ id, route, component: Component }) => (
-              <Route path={route} element={<Component />} key={id} />
+              <Route
+                path={route}
+                element={<Component />}
+                key={id}
+                data-testid={id}
+              />
             ))}
             <Route path="*" element={<Missing />} />
           </Routes>
-          <Footer></Footer>
+          <Footer />
         </div>
       </IntlProvider>
     </ThemeProvider>

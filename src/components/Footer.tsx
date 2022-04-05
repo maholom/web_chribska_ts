@@ -16,9 +16,10 @@ const Footer = () => {
         sx={{
           color: 'white',
           backgroundColor: () => alpha(theme.palette.primary.main, 1),
+          pt: 2,
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Grid container spacing={5}>
             <Grid item xs={12} sm={4}>
               <Typography>

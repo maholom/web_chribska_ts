@@ -5,27 +5,18 @@ describe('Homepage', () => {
     cy.visit('http://localhost:3000/');
   });
   it('display text', () => {
-    cy.tid('main-text').should('contain', 'Test');
-    cy.tide('text').should('contain', 'Test');
+    cy.tid('main-text').should('contain', 'Vítejte');
+    cy.tide('text').should('contain', 'Vítejte');
   });
   it('routing', () => {
-    cy.get('h1').should('contain', 'Home');
-    cy.tid('link-about').click();
-    cy.get('h1').should('contain', 'About');
-    cy.tid('link-accommodation').click();
-    cy.get('h1').should('contain', 'Accommodation');
-    cy.tid('link-intro').click();
-    cy.get('h1').should('contain', 'Intro');
-    cy.get('button').should('contain', 'Vstupte').click();
-    // cy.tid('button-intro')
-    cy.get('h1').should('contain', 'Home');
-    cy.tid('link-accommodation').click();
-    cy.get('h1').should('contain', 'Accommodation');
-    cy.tid('link-references').click();
-    cy.get('h1').should('contain', 'References');
-    cy.tid('link-guest').click();
-    cy.get('h1').should('contain', 'Guest');
-    cy.tid('link-home').click();
-    cy.get('h1').should('contain', 'Home');
+    cy.tid('home').should('contain', 'Vitejte!');
+    cy.tid('about').click();
+    cy.get('h6').should('contain', 'O nás');
+    cy.tid('accommodation').click();
+    cy.get('h6').should('contain', 'Nocleh');
+    cy.tid('contact').click();
+    cy.get('h6').should('contain', 'Pojďte');
+    cy.tid('home').click();
+    cy.get('h6').should('contain', 'O nás');
   });
 });

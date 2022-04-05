@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { styled, experimental_sx as sx } from '@mui/system';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -89,9 +89,7 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
               ))}
             </Menu>
           </Box>
-
           <LogoSmall src={Jagdhaus_Logo_WHITE} alt="logo white" />
-
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pageRoutes.map(({ id, route }) => (
               <Button

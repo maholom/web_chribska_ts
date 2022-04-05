@@ -9,4 +9,5 @@ export const theme = createTheme({
       main: '#7a888e',
     },
   },
+  spacing: 8,
 });
