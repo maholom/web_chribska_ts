@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
+import { Box, alpha } from '@mui/material';
 import home_headliner from './homefoto/home_headliner.jpg';
 import home_headliner2 from './homefoto/home_headliner2.jpg';
 import home_headliner3 from './homefoto/home_headliner3.jpg';
@@ -15,6 +15,7 @@ import { srcset } from '../logic/srcset';
 import { useIntl } from 'react-intl';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { theme } from '../theme';
 
 const Home = () => {
   const intl = useIntl();
@@ -27,7 +28,14 @@ const Home = () => {
             <Grid item xs={12}>
               <div>Caroussel</div>
             </Grid>
-            <Grid container>
+            <Grid
+              container
+              sx={{
+                color: () => alpha(theme.palette.primary.main, 1),
+                mb: 3,
+                mt: 2,
+              }}
+            >
               <Grid item xs={12}>
                 <Typography textAlign="center" variant={'h2'}>
                   {intl.formatMessage({
@@ -42,6 +50,7 @@ const Home = () => {
               direction="row"
               justifyContent="center"
               alignItems="center"
+              sx={{ display: 'flex', alignItems: 'center', mt: 2, mb: 2 }}
             >
               <Grid item xs={12} sm={6}>
                 <Box>
@@ -61,7 +70,7 @@ const Home = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <ImageList
-                  sx={{ width: 500, height: 450 }}
+                  sx={{ width: 500, height: 450, pt: 0 }}
                   variant="quilted"
                   cols={4}
                   rowHeight={121}
@@ -80,6 +89,20 @@ const Home = () => {
                     </ImageListItem>
                   ))}
                 </ImageList>
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              sx={{
+                color: () => alpha(theme.palette.primary.main, 1),
+              }}
+            >
+              <Grid item xs={12}>
+                <Typography textAlign="center" variant={'h3'}>
+                  {intl.formatMessage({
+                    id: 'home-cfa',
+                  })}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>

@@ -22,7 +22,7 @@ const Footer = () => {
         <Container maxWidth="xl">
           <Grid container spacing={5}>
             <Grid item xs={12} sm={4}>
-              <Typography>
+              <Typography variant="subtitle2">
                 <Box borderBottom={1}>
                   <strong>
                     {intl.formatMessage({
@@ -31,28 +31,28 @@ const Footer = () => {
                   </strong>
                 </Box>
               </Typography>
-              <Typography>
+              <Typography variant="subtitle2">
                 <Box>
                   {intl.formatMessage({
                     id: 'footer-adress-detail1',
                   })}
                 </Box>
               </Typography>
-              <Typography>
+              <Typography variant="subtitle2">
                 <Box>
                   {intl.formatMessage({
                     id: 'footer-adress-detail2',
                   })}
                 </Box>
               </Typography>
-              <Typography>
+              <Typography variant="subtitle2">
                 <Box>
                   {intl.formatMessage({
                     id: 'footer-adress-mail',
                   })}
                 </Box>
               </Typography>
-              <Typography>
+              <Typography variant="subtitle2">
                 <Box>
                   {intl.formatMessage({
                     id: 'footer-adress-phone',
@@ -61,7 +61,7 @@ const Footer = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Typography>
+              <Typography variant="subtitle2">
                 <Box borderBottom={1}>
                   <strong>
                     {intl.formatMessage({
@@ -70,7 +70,7 @@ const Footer = () => {
                   </strong>
                 </Box>
               </Typography>
-              <Typography paragraph={true}>
+              <Typography variant="subtitle2" paragraph={true}>
                 <Box>
                   {intl.formatMessage({
                     id: 'footer-train-description',
@@ -79,7 +79,7 @@ const Footer = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Typography>
+              <Typography variant="subtitle2">
                 <Box borderBottom={1}>
                   <strong>
                     {intl.formatMessage({
@@ -88,7 +88,7 @@ const Footer = () => {
                   </strong>
                 </Box>
               </Typography>
-              <Typography paragraph={true}>
+              <Typography variant="subtitle2" paragraph={true}>
                 <Box>
                   {intl.formatMessage({
                     id: 'footer-car-description',
