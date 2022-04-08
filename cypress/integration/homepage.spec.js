@@ -18,4 +18,12 @@ describe('Homepage', () => {
     cy.tid('menu-home-md').click();
     cy.tid('menu-home-md').should('contain', 'Vítejte!');
   });
+  it('translate', () => {
+    cy.tid('translate-de').should('contain', 'DE');
+    cy.tid('translate-de').click();
+    cy.tid('menu-home-md').should('contain', 'Willkommen!');
+    cy.tid('translate-cs').should('contain', 'CZ');
+    cy.tid('translate-cs').click();
+    cy.tid('menu-home-md').should('contain', 'Vítejte!');
+  });
 });

@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
                 color={route === pathname ? 'secondary' : 'primary'}
                 key={id}
                 onClick={handleCloseNavMenu(route)}
-                sx={{ my: 2, color: 'red', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block' }}
                 data-testid={`menu-${id}-md`}
               >
                 {intl.formatMessage({
