@@ -3,19 +3,14 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Box, alpha } from '@mui/material';
-import home_headliner from './homefoto/home_headliner.jpg';
-import home_headliner2 from './homefoto/home_headliner2.jpg';
-import home_headliner3 from './homefoto/home_headliner3.jpg';
-import home_headliner5 from './homefoto/home_headliner5.jpg';
-import home_headliner6 from './homefoto/home_headliner6.jpg';
-import home_headliner7 from './homefoto/home_headliner7.jpg';
-import home_headliner8 from './homefoto/home_headliner8.jpg';
-import home_headliner10 from './homefoto/home_headliner10.jpg';
+import Jagdhaus_Logo_RGB from './logo/Jagdhaus_Logo_RGB.svg';
 import { srcset } from '../logic/srcset';
 import { useIntl } from 'react-intl';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { theme } from '../theme';
+import { Link } from 'react-router-dom';
+import { itemDataCollageHome } from './utils';
 
 const Home = () => {
   const intl = useIntl();
@@ -70,12 +65,12 @@ const Home = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <ImageList
-                  sx={{ width: 500, height: 450, pt: 0 }}
+                  sx={{ width: 500, height: 500, pt: 0 }}
                   variant="quilted"
                   cols={4}
                   rowHeight={121}
                 >
-                  {itemData.map((item) => (
+                  {itemDataCollageHome.map((item) => (
                     <ImageListItem
                       key={item.img}
                       cols={item.cols || 1}
@@ -104,6 +99,11 @@ const Home = () => {
                   })}
                 </Typography>
               </Grid>
+              <Grid item xs={8}>
+                <Link to="/contact">
+                  <img src={Jagdhaus_Logo_RGB} alt="logo color" />
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
         </Container>
@@ -111,46 +111,5 @@ const Home = () => {
     </>
   );
 };
-
-const itemData = [
-  {
-    img: home_headliner,
-    title: 'Chalupa',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: home_headliner7,
-    title: 'Chalupa',
-  },
-  {
-    img: home_headliner8,
-    title: 'Camera',
-  },
-  {
-    img: home_headliner10,
-    title: 'Coffee',
-    cols: 2,
-  },
-  {
-    img: home_headliner5,
-    title: 'Hats',
-    cols: 2,
-  },
-  {
-    img: home_headliner6,
-    title: 'Honey',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: home_headliner2,
-    title: 'Basketball',
-  },
-  {
-    img: home_headliner3,
-    title: 'Fern',
-  },
-];
 
 export default Home;
