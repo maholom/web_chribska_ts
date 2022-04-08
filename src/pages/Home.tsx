@@ -11,18 +11,21 @@ import ImageListItem from '@mui/material/ImageListItem';
 import { theme } from '../theme';
 import { Link } from 'react-router-dom';
 import { itemDataCollageHome } from './utils';
+import { CarouselElm } from '../components/Carousel';
 
 const Home = () => {
   const intl = useIntl();
 
   return (
     <>
-      <Box sx={{ m: 3 }}>
-        <Container maxWidth="lg">
-          <Grid container>
+      <Box>
+        <Container>
+          <Grid container maxWidth="lg">
             <Grid item xs={12}>
-              <div>Caroussel</div>
+              <CarouselElm />
             </Grid>
+          </Grid>
+          <Grid container maxWidth="md" sx={{ m: 3 }}>
             <Grid
               container
               sx={{
