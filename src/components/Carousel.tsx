@@ -1,15 +1,15 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import headliner_1 from '../pages/homefoto/headliner_1.jpg';
-import headliner_2 from '../pages/homefoto/headliner_2.jpg';
+import Image_house_carousel from '../pages/homefoto/Image_house_carousel.jpg';
+import Image_natur_carousel from '../pages/homefoto/Image_natur_carousel.jpg';
 
 export const CarouselElm = (props: any) => {
   const items = [
     {
-      src: headliner_1,
+      src: Image_house_carousel,
     },
     {
-      src: headliner_2,
+      src: Image_natur_carousel,
     },
   ];
 
