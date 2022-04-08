@@ -19,6 +19,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           aria-label="cesky"
           size="small"
           style={{ margin: '0px' }}
+          data-testid="translate-cs"
         >
           <div>CZ</div>
         </Fab>
@@ -28,6 +29,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           color="primary"
           aria-label="deutch"
           size="small"
+          data-testid="translate-de"
         >
           <div>DE</div>
         </Fab>

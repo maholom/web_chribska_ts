@@ -100,7 +100,7 @@ const Home = () => {
                 </Typography>
               </Grid>
               <Grid item xs={8}>
-                <Link to="/contact">
+                <Link data-testid="link-contact-logo" to="/contact">
                   <img src={Jagdhaus_Logo_RGB} alt="logo color" />
                 </Link>
               </Grid>

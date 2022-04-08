@@ -5,18 +5,17 @@ describe('Homepage', () => {
     cy.visit('http://localhost:3000/');
   });
   it('display text', () => {
-    cy.tid('main-text').should('contain', 'Vítejte');
-    cy.tide('text').should('contain', 'Vítejte');
+    cy.tid('menu-home-md').should('contain', 'Vítejte!');
   });
   it('routing', () => {
-    cy.tid('home').should('contain', 'Vitejte!');
-    cy.tid('about').click();
-    cy.get('h6').should('contain', 'O nás');
-    cy.tid('accommodation').click();
-    cy.get('h6').should('contain', 'Nocleh');
-    cy.tid('contact').click();
-    cy.get('h6').should('contain', 'Pojďte');
-    cy.tid('home').click();
-    cy.get('h6').should('contain', 'O nás');
+    cy.tid('menu-home-md').should('contain', 'Vítejte!');
+    cy.tid('menu-about-md').click();
+    cy.tid('menu-about-md').should('contain', 'Dobrodružství čekají');
+    cy.tid('menu-accommodation-md').click();
+    cy.tid('menu-accommodation-md').should('contain', 'Nocleh');
+    cy.tid('menu-contact-md').click();
+    cy.tid('menu-contact-md').should('contain', 'Pojďte dál');
+    cy.tid('menu-home-md').click();
+    cy.tid('menu-home-md').should('contain', 'Vítejte!');
   });
 });

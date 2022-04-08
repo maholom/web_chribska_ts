@@ -78,6 +78,7 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
                   selected={route === pathname}
                   key={id}
                   onClick={handleCloseNavMenu(route)}
+                  data-testid={`menu-${id}-sx`}
                 >
                   <Typography textAlign="center">
                     {intl.formatMessage({
@@ -96,7 +97,8 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
                 color={route === pathname ? 'secondary' : 'primary'}
                 key={id}
                 onClick={handleCloseNavMenu(route)}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'red', display: 'block' }}
+                data-testid={`menu-${id}-md`}
               >
                 {intl.formatMessage({
                   id: `menu-${id}`,
