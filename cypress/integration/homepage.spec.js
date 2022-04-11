@@ -1,6 +1,6 @@
 describe('Homepage', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/', { timeout: 6000 });
+    cy.visit('http://localhost:3000/', { timeout: 60000 });
   });
   it('display text', () => {
     cy.tid('menu-home-md').should('contain', 'Vítejte!');
