@@ -1,0 +1,22 @@
+{
+  "app_name": "yyy",
+  "menu-home": "Willkommen!",
+  "menu-about": "Große Abenteuer",
+  "menu-accommodation": "Kommt rein!",
+  "menu-contact": "Gleich buchen",
+  "home-headliner": "Willkommen in der Natur!",
+  "home-text1": "Das Jagdhaus ist ein Ort für Entdecker: für die Entdecker mit Wanderstiefeln, die in die Sandsteinfelsen aufbrechen und das Panorama der sächsisch-böhmischen Schweiz genießen. Und für die Entdecker mit Pantoffeln, die von der Terrasse aus den Eisvogel im Bach bewundern und die Eichhörnchen in den Bäumen beobachten. Das Jagdhaus liegt im kleinen tschechischen Ort Chřibska (Kreibitz), und gleich vor der Tür beginnen Wander- und Radwege.",
+  "home-text2": "Gejagt wird hier auch heute noch. Was Ihr auf der Pirsch findet? Gute Ideen. Tiefen Schlaf am rauschenden Bach. Neue Perspektiven. Inspirierende Gespräche. Zurückgezogene Zweisamkeit. Durch-den-Garten-Toben mit den Kindern.",
+  "home-text3": "Auf eine Zeit voller Erlebnisse und Inspirationen!",
+  "contact-pricelist-weekend": "contact-pricelist-weekend",
+  "contact-pricelist-weekend-text": "contact-pricelist-weekend-text",
+  "footer-adress": "Adresse",
+  "footer-adress-detail1": "Horní Chřibská 15",
+  "footer-adress-detail2": "407 44 Chřibská",
+  "footer-adress-mail": "willkommen@jagdhaus.cz",
+  "footer-adress-phone": "Tel. +49 30/20169105",
+  "footer-train": "Per Bahn zu uns",
+  "footer-train-description": "Mit dem EuroCity Berlin-Prag bis Decin. Von dort per Bus weiter (Bus 402 bis Chribska namesti, ca. 45 Minuten)",
+  "footer-car": "Per Auto zu uns",
+  "footer-car-description": "In Pirna von der Autobahn und dann über die Panoramastrecke Königstein – Bad Schandau – Jetrichovice bis zu uns (ab Pirna: ca. 1 Stunde)."
+}

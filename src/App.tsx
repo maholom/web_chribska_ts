@@ -1,41 +1,56 @@
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
+import { ThemeProvider } from '@emotion/react';
+import i18n from './services/i18n';
+import { theme } from './theme';
+import Home from './pages/Home';
+import About from './pages/About';
+import Accommodation from './pages/Accommodation';
+import Contact from './pages/Contact';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-const Home = () => <h1>Home</h1>;
-const About = () => <h1>About</h1>;
 const Missing = () => <h1>Missing</h1>;
 
+export const pageRoutes: Array<any> = [
+  { id: 'home', component: Home, route: '/' },
+  { id: 'about', component: About, route: '/about' },
+  { id: 'accommodation', component: Accommodation, route: '/accommodation' },
+  { id: 'contact', component: Contact, route: '/contact' },
+];
+
 function App() {
+  const [lang, setLang] = useState(i18n.getDefaultLocale());
+  const onChangeLanguage = (locale: string) => {
+    setLang(locale);
+  };
+  const messages = i18n.getMessages(lang);
   return (
-    <div className="App">
-      <Link data-testid="link-about" to="/about">
-        About
-      </Link>
-      <Link data-testid="link-home" to="/">
-        Home
-      </Link>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="*" element={<Missing />} />
-      </Routes>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p data-testid="main-text">
-          Test Review <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <IntlProvider
+        messages={messages}
+        key={lang}
+        locale={lang}
+        defaultLocale="cs"
+      >
+        <div className="App">
+          <Header onChangeLanguage={onChangeLanguage}></Header>
+          <Routes>
+            {pageRoutes.map(({ id, route, component: Component }) => (
+              <Route
+                path={route}
+                element={<Component />}
+                key={id}
+                data-testid={id}
+              />
+            ))}
+            <Route path="*" element={<Missing />} />
+          </Routes>
+          <Footer />
+        </div>
+      </IntlProvider>
+    </ThemeProvider>
   );
 }
 
