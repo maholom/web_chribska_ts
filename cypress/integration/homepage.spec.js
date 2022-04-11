@@ -1,5 +1,3 @@
-const { get } = require('http');
-
 describe('Homepage', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/');
@@ -19,11 +17,9 @@ describe('Homepage', () => {
     cy.tid('menu-home-md').should('contain', 'Vítejte!');
   });
   it('translate', () => {
-    cy.tid('translate-de').should('contain', 'DE');
-    cy.tid('translate-de').click();
+    cy.tid('translate-de').should('contain', 'DE').click();
     cy.tid('menu-home-md').should('contain', 'Willkommen!');
-    cy.tid('translate-cs').should('contain', 'CZ');
-    cy.tid('translate-cs').click();
+    cy.tid('translate-cs').should('contain', 'CZ').click();
     cy.tid('menu-home-md').should('contain', 'Vítejte!');
   });
 });

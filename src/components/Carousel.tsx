@@ -1,22 +1,27 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import Image_house_carousel from '../pages/homefoto/Image_house_carousel.jpg';
-import Image_natur_carousel from '../pages/homefoto/Image_natur_carousel.jpg';
 
-export const CarouselElm = (props: any) => {
-  const items = [
-    {
-      src: Image_house_carousel,
-    },
-    {
-      src: Image_natur_carousel,
-    },
-  ];
+interface CarouselProps {
+  items?: string[];
+  height?: number;
+}
 
+export const CarouselElm: React.FC<CarouselProps> = ({ items, height }) => {
+  if (!items) {
+    return null;
+  }
   return (
-    <Carousel>
-      {items.map((item, i) => (
-        <Item key={i} item={item} />
+    <Carousel
+      height={height || 400}
+      animation="slide"
+      duration={500}
+      sx={{ boxShadow: 2 }}
+      navButtonsAlwaysVisible
+      indicators
+      autoPlay
+    >
+      {items.map((item) => (
+        <Item key={item} item={{ src: item }} />
       ))}
     </Carousel>
   );

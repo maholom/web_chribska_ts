@@ -43,7 +43,11 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Logo src={Jagdhaus_Logo_WHITE} alt="logo white" />
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Link data-testid="link-navbar-logo" to="/">
+              <Logo src={Jagdhaus_Logo_WHITE} alt="logo white" />
+            </Link>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="medium"
@@ -90,7 +94,11 @@ export const Header: React.FC<HeaderProps> = ({ onChangeLanguage }) => {
               ))}
             </Menu>
           </Box>
-          <LogoSmall src={Jagdhaus_Logo_WHITE} alt="logo white" />
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Link data-testid="link-navbar-logo" to="/">
+              <LogoSmall src={Jagdhaus_Logo_WHITE} alt="logo white" />
+            </Link>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pageRoutes.map(({ id, route }) => (
               <Button
@@ -119,21 +127,17 @@ export default Header;
 
 export const Logo = styled('img')(
   sx({
-    flexGrow: 1,
-    maxHeight: '25px',
+    height: '50px',
     objectFit: 'fill',
     margin: 0,
     mr: 2,
-    display: { xs: 'none', md: 'flex' },
   }),
 );
 
 export const LogoSmall = styled('img')(
   sx({
-    flexGrow: 1,
     margin: 0,
-    maxHeight: '25px',
+    height: '25px',
     objectFit: 'fill',
-    display: { xs: 'flex', md: 'none' },
   }),
 );

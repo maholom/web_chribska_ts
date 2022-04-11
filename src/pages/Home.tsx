@@ -12,6 +12,10 @@ import { theme } from '../theme';
 import { Link } from 'react-router-dom';
 import { itemDataCollageHome } from './utils';
 import { CarouselElm } from '../components/Carousel';
+import Image_house_carousel from './homefoto/Image_house_carousel.jpg';
+import Image_natur_carousel from './homefoto/Image_natur_carousel.jpg';
+
+const carousel = [Image_house_carousel, Image_natur_carousel];
 
 const Home = () => {
   const intl = useIntl();
@@ -22,14 +26,7 @@ const Home = () => {
         <Container sx={{ m: 0, p: 0 }}>
           <Grid container sx={{ m: 0, p: 0 }}>
             <Grid item xs={12}>
-              <CarouselElm
-                height={400}
-                animation="slide"
-                duration={1000}
-                sx={{ boxShadow: 2 }}
-                navButtonsAlwaysVisible
-                indicators
-              />
+              <CarouselElm items={carousel} />
             </Grid>
           </Grid>
           <Grid container maxWidth="lg" sx={{ m: 3 }}>

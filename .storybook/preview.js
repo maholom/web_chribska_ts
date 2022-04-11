@@ -4,8 +4,8 @@ export const parameters = {
   reactIntl,
   locale: reactIntl.defaultLocale,
   locales: {
-    en: 'English',
-    el: 'Greece',
+    cs: 'Cesky',
+    de: 'Deutsch',
   },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
