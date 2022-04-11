@@ -2,12 +2,12 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { Box } from '@mui/material';
-import { useIntl } from 'react-intl';
+// import { useIntl } from 'react-intl';
 import MediaCard from '../components/Card';
 import headliner_innen_1 from './homefoto/headliner_innen_1.jpg';
 
 const Contact = () => {
-  const intl = useIntl();
+  // const intl = useIntl();
 
   return (
     <>

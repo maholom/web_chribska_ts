@@ -6,7 +6,6 @@ import headliner_natur2 from './homefoto/headliner_natur2.jpg';
 import headliner_innen_1 from './homefoto/headliner_innen_1.jpg';
 import headliner_innen_2 from './homefoto/headliner_innen_2.jpg';
 import headliner_natur3 from './homefoto/headliner_natur3.jpg';
-import { Paper, Button } from '@mui/material';
 
 export const itemDataCollageHome = [
   {
