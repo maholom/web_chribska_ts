@@ -9,6 +9,6 @@ test('renders app', () => {
       <App />
     </MemoryRouter>,
   );
-  const linkElement = screen.getByText(/Vítejte/i);
+  const linkElement = screen.getByText(/Vítejte!/i);
   expect(linkElement).toBeInTheDocument();
 });
