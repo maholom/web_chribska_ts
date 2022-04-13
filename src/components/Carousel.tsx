@@ -15,7 +15,6 @@ export const CarouselElm: React.FC<CarouselProps> = ({ items, height }) => {
       height={height || 400}
       animation="slide"
       duration={500}
-      sx={{ boxShadow: 2 }}
       navButtonsAlwaysVisible
       indicators
       autoPlay
