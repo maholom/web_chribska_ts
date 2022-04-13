@@ -108,7 +108,7 @@ const Home = () => {
                 item
                 xs={4}
                 sx={{
-                  alignItem: 'center',
+                  m: 2,
                   width: 50,
                   height: 50,
                   '&:hover': {

@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 // import { useIntl } from 'react-intl';
 import MediaCard from '../components/Card';
 import headliner_innen_1 from './homefoto/headliner_innen_1.jpg';
+import headliner_innen_2 from './homefoto/headliner_innen_2.jpg';
 
 const Contact = () => {
   // const intl = useIntl();
@@ -12,27 +13,15 @@ const Contact = () => {
   return (
     <>
       <Box maxWidth="xl">
-        <Container sx={{ m: 0, p: 0 }}>
-          <Grid container>
+        <Container sx={{ m: 2, p: 0 }}>
+          <Grid container sx={{ justifyContent: 'space-around' }}>
             <MediaCard
               image={headliner_innen_1}
               intlKey="contact-pricelist-weekend"
             />
             <MediaCard
-              image={headliner_innen_1}
-              intlKey="contact-pricelist-weekend"
-            />
-            <MediaCard
-              image={headliner_innen_1}
-              intlKey="contact-pricelist-weekend"
-            />
-            <MediaCard
-              image={headliner_innen_1}
-              intlKey="contact-pricelist-weekend"
-            />
-            <MediaCard
-              image={headliner_innen_1}
-              intlKey="contact-pricelist-weekend"
+              image={headliner_innen_2}
+              intlKey="contact-pricelist-weekend2"
             />
           </Grid>
         </Container>
