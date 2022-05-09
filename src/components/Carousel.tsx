@@ -1,23 +1,33 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 
-interface CarouselProps {
+interface CarouselElmProps {
   items?: string[];
   height?: number;
+  animation?: 'fade' | 'slide';
+  indicators?: boolean;
+  navButtonsAlwaysVisible?: boolean;
+  fullHeightHover?: boolean;
 }
 
-export const CarouselElm: React.FC<CarouselProps> = ({ items, height }) => {
+export const CarouselElm: React.FC<CarouselElmProps> = ({
+  items,
+  height,
+  indicators,
+  animation,
+  navButtonsAlwaysVisible,
+  fullHeightHover,
+}) => {
   if (!items) {
     return null;
   }
   return (
     <Carousel
-      height={height || 400}
+      fullHeightHover
+      indicators={true}
+      navButtonsAlwaysVisible={true}
       animation="slide"
-      duration={500}
-      navButtonsAlwaysVisible
-      indicators
-      autoPlay
+      height={height || 400}
     >
       {items.map((item) => (
         <Item key={item} item={{ src: item }} />

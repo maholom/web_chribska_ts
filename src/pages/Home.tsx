@@ -26,7 +26,7 @@ const Home = () => {
         <Container sx={{ m: 0, p: 0 }}>
           <Grid container sx={{ m: 0, p: 0 }}>
             <Grid item xs={12}>
-              <CarouselElm items={carousel} />
+              <CarouselElm items={carousel} height={100} />
             </Grid>
           </Grid>
           <Grid container maxWidth="lg" sx={{ m: 3 }}>

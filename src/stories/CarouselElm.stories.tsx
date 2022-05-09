@@ -9,6 +9,12 @@ const carousel = [Image_house_carousel, Image_natur_carousel];
 export default {
   title: 'Example/CarouselElm',
   component: CarouselElm,
+  argTypes: {
+    indicators: { type: 'boolean' },
+    navButtonsAlwaysVisible: { type: 'boolean' },
+    autoPlay: { type: 'boolean' },
+    duration: { type: 'number' },
+  },
 } as ComponentMeta<typeof CarouselElm>;
 
 const Template: ComponentStory<typeof CarouselElm> = ({ ...args }) => (
@@ -20,3 +26,10 @@ const Template: ComponentStory<typeof CarouselElm> = ({ ...args }) => (
 
 export const CarouselVisible = Template.bind({});
 CarouselVisible.args = { items: carousel, height: 200 };
+
+export const CarouselAnimation = Template.bind({});
+CarouselAnimation.args = {
+  items: carousel,
+  navButtonsAlwaysVisible: false,
+  height: 200,
+};
