@@ -1,49 +1,18 @@
-import React, { FC } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql,
-} from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
   uri: 'https://graphql.contentful.com/content/v1/spaces/g1p7go9605cm/environments/master',
+  headers: {
+    Authorization: 'Bearer LcFmzLaCy7trlufhOSPRUiyg_BAIYBSvHidCwRLc4_g',
+  },
   cache: new InMemoryCache(),
 });
-
-const RESERVATION_STARTDATE = gql`
-  query {
-    reservationCollection {
-      items {
-        name
-        startDate
-      }
-    }
-  }
-`;
-
-interface QueryResult {
-  id: string;
-  startDate: Date;
-}
-
-export const StartDateQuery: FC<QueryResult> = () => {
-  const { data } = useQuery(RESERVATION_STARTDATE);
-
-  return data.reservationColection.items.map(({ id, startDate }) => (
-    <div key={id}>
-      <p>
-        {id}: {startDate}
-      </p>
-    </div>
-  ));
-};
 
 ReactDOM.render(
   <React.StrictMode>

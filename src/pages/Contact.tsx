@@ -7,7 +7,6 @@ import MediaCard from '../components/Card';
 import headliner_innen_1 from './homefoto/headliner_innen_1.jpg';
 import headliner_innen_2 from './homefoto/headliner_innen_2.jpg';
 import { ReservationForm } from '../components/ReservationForm';
-import { ReservationCalendar } from '../components/ReservationCalendar';
 
 const Contact = () => {
   // const intl = useIntl();
