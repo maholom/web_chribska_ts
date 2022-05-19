@@ -5,6 +5,7 @@ import { ReservationCalendarForm } from './ReservationCalendarForm';
 
 export const ReservationForm = () => {
   const intl = useIntl();
+
   return (
     <>
       <form>

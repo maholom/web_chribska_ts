@@ -4,6 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 import { useQuery, gql } from '@apollo/client';
 import { useIntl } from 'react-intl';
+import { cs, de } from 'date-fns/locale';
 import '../index.css';
 
 const RESERVATION_STARTDATE = gql`
@@ -56,20 +57,31 @@ export const ReservationCalendarForm = () => {
     (acc, { id, endDate: ed, startDate: sd }) => [...acc, ...getRange(sd, ed)],
     [] as Date[],
   );
-
+  let error = null;
+  if (startDate && endDate) {
+    const excludeDatesString = excludeDates.map((e) => e.toDateString());
+    if (
+      getRange(startDate, endDate).find(
+        (date) => excludeDatesString.indexOf(date.toDateString()) !== -1,
+      )
+    ) {
+      error = 'xxx';
+    }
+  }
   return (
-    <DatePicker
-      selected={startDate}
-      onChange={onChange}
-      startDate={startDate}
-      endDate={endDate}
-      excludeDates={excludeDates}
-      selectsRange
-      inline
-      monthsShown={2}
-      locale={intl.formatMessage({
-        id: 'calendar',
-      })}
-    />
+    <>
+      <div>{error}</div>
+      <DatePicker
+        selected={startDate}
+        onChange={onChange}
+        startDate={startDate}
+        endDate={endDate}
+        excludeDates={excludeDates}
+        selectsRange
+        inline
+        monthsShown={2}
+        locale={intl.locale === 'cs' ? cs : de}
+      />
+    </>
   );
 };
