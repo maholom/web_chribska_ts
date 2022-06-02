@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 // import { useIntl } from 'react-intl';
 import MediaCard from '../components/Card';
 import headliner_innen_1 from './homefoto/headliner_innen_1.jpg';
@@ -27,8 +27,7 @@ const Contact = () => {
           </Grid>
         </Container>
         <Container>
-          <Grid container>
-            <Typography variant="h5">REZERVACE</Typography>
+          <Grid container sx={{ justifyContent: 'space-around' }}>
             <ReservationForm />
           </Grid>
         </Container>

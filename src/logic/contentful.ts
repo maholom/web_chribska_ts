@@ -3,7 +3,13 @@ const contentful = require('contentful-management');
 const client = contentful.createClient({
   accessToken: 'CFPAT-hE9KLKDtWUTB78C7ctx5ND0AXFnSkHt9O45N81ZRVG8',
 });
-const createReservation = () => {
+ const createReservation = (
+  name: string,
+  message: string,
+  email: string,
+  startDate: Date,
+  endDate: Date,
+) => {
   client
     .getSpace('g1p7go9605cm')
     .then((space: any) => space.getEnvironment('master'))
@@ -14,19 +20,19 @@ const createReservation = () => {
             'en-US': '1,2,3',
           },
           startDate: {
-            'en-US': '2022-07-17',
+            'en-US': startDate,
           },
           endDate: {
-            'en-US': '2022-07-19',
+            'en-US': endDate,
           },
           name: {
-            'en-US': 'EE',
+            'en-US': name,
           },
           email: {
-            'en-US': 'mat@seznam.cz',
+            'en-US': email,
           },
           text: {
-            'en-US': 'ahoj',
+            'en-US': message,
           },
         },
       }),

@@ -22,10 +22,6 @@ export const ReservationForm = () => {
     startDate: null,
     endDate: null,
   });
-  // const [email, setEmail] = useState('');
-  // const [message, setMessage] = useState('');
-  // const [nameErrorText, setNameErrorText] = useState('');
-  // const [emailErrorText, setEmailErrorText] = useState('');
 
   const {
     register,
