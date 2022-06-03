@@ -78,3 +78,10 @@ code {
 .react-datepicker__year-text--in-range:hover {
   background-color: #3c7460 !important;
 }
+
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__month-text--keyboard-selected,
+.react-datepicker__quarter-text--keyboard-selected,
+.react-datepicker__year-text--keyboard-selected {
+  background-color: #3c7460 !important;
+}
